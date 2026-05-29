@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { LayoutDashboard, Store, DollarSign, CalendarDays } from "lucide-react";
+import { LayoutDashboard, DollarSign, CalendarDays } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
 import { LogoutButton } from "@/components/LogoutButton";
 
@@ -19,9 +19,6 @@ export default async function AdminLayout({ children }: { children: React.ReactN
           <nav className="flex-1 p-4 space-y-1">
             <Link href="/admin/dashboard" className="flex items-center gap-3 px-4 py-3 text-gray-700 rounded-xl hover:bg-gray-50 font-medium transition-colors">
               <LayoutDashboard className="w-5 h-5 text-gray-400" /> Dashboard
-            </Link>
-            <Link href="/admin/umkm" className="flex items-center gap-3 px-4 py-3 text-gray-700 rounded-xl hover:bg-gray-50 font-medium transition-colors">
-              <Store className="w-5 h-5 text-gray-400" /> Kelola UMKM
             </Link>
             <Link href="/admin/pembiayaan" className="flex items-center gap-3 px-4 py-3 text-gray-700 rounded-xl hover:bg-gray-50 font-medium transition-colors">
               <DollarSign className="w-5 h-5 text-gray-400" /> Info Pembiayaan

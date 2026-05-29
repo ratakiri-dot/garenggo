@@ -2,6 +2,14 @@ import { createClient } from "@/lib/supabase/server";
 import Link from "next/link";
 import { Edit, Trash2, Plus } from "lucide-react";
 
+type AdminEventItem = {
+  id: string | number;
+  judul?: string;
+  tanggal_mulai?: string | null;
+  created_at?: string | null;
+  lokasi?: string | null;
+};
+
 export default async function AdminEventPage() {
   const supabase = createClient();
   const { data: events } = await supabase.from("event").select("*").order("created_at", { ascending: false });
@@ -28,7 +36,7 @@ export default async function AdminEventPage() {
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-200">
-              {items.length > 0 ? items.map((item: any) => (
+              {items.length > 0 ? items.map((item: AdminEventItem) => (
                 <tr key={item.id} className="hover:bg-gray-50">
                   <td className="px-6 py-4 font-medium text-gray-900">{item.judul}</td>
                   <td className="px-6 py-4">{new Date(item.tanggal_mulai || item.created_at).toLocaleDateString("id-ID")}</td>

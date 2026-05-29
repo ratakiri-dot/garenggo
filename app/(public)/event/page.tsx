@@ -1,9 +1,21 @@
 import { BeritaCard } from "@/components/BeritaCard";
 import { createClient } from "@/lib/supabase/server";
 
+type EventItem = {
+  id: string | number;
+  slug: string;
+  judul?: string;
+  konten?: string | null;
+  thumbnail?: string | null;
+  tanggal_mulai?: string | null;
+  tanggal?: string | null;
+  created_at?: string | null;
+  lokasi?: string | null;
+};
+
 export const metadata = {
-  title: "Event & Pelatihan | GARENG GO!",
-  description: "Ikuti berbagai event dan pelatihan untuk meningkatkan kapasitas UMKM Anda.",
+  title: "Agenda & Pelatihan | GARENG GO!",
+  description: "Agenda pelatihan dan event untuk memperkuat kapasitas bisnis serta akses pembiayaan dan venture capital.",
 };
 
 export default async function EventPage() {
@@ -19,12 +31,12 @@ export default async function EventPage() {
     <div className="container mx-auto px-4 py-12">
       <div className="mb-12 max-w-2xl">
         <h1 className="text-4xl font-black text-gray-900 mb-4">Event & Pelatihan</h1>
-        <p className="text-gray-600 text-lg">Ikuti berbagai kegiatan, bazaar, dan pelatihan untuk meningkatkan kapasitas bisnis UMKM Anda.</p>
+        <p className="text-gray-600 text-lg">Ikuti kegiatan dan pelatihan yang membantu bisnis mengakses modal, memahami venture capital, dan memperkuat operasi.</p>
       </div>
 
       {events.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {events.map((item: any) => (
+          {events.map((item: EventItem) => (
             <BeritaCard
               key={item.id}
               type="event"

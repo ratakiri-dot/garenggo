@@ -8,8 +8,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "GARENG GO! - Gandeng Renteng Go Level Up",
-  description: "Public information hub for MSMEs in Indonesia.",
+  title: "GARENG GO! - Informasi Venture Capital & Pembiayaan Indonesia",
+  description: "Situs informasi terpusat tentang venture capital dan pembiayaan di Indonesia.",
 };
 
 export default function RootLayout({

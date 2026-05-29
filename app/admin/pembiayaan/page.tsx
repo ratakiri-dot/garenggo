@@ -2,6 +2,14 @@ import { createClient } from "@/lib/supabase/server";
 import Link from "next/link";
 import { Edit, Trash2, Plus } from "lucide-react";
 
+type AdminPembiayaanItem = {
+  id: string | number;
+  judul?: string;
+  sumber?: string | null;
+  tanggal?: string | null;
+  created_at?: string | null;
+};
+
 export default async function AdminPembiayaanPage() {
   const supabase = createClient();
   const { data: pembiayaans } = await supabase.from("pembiayaan").select("*").order("created_at", { ascending: false });
@@ -28,7 +36,7 @@ export default async function AdminPembiayaanPage() {
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-200">
-              {items.length > 0 ? items.map((item: any) => (
+              {items.length > 0 ? items.map((item: AdminPembiayaanItem) => (
                 <tr key={item.id} className="hover:bg-gray-50">
                   <td className="px-6 py-4 font-medium text-gray-900">{item.judul}</td>
                   <td className="px-6 py-4">{new Date(item.tanggal || item.created_at).toLocaleDateString("id-ID")}</td>

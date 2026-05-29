@@ -3,15 +3,13 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { cn } from "@/lib/utils";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const links = [
-    { href: "/umkm", label: "Direktori UMKM" },
-    { href: "/pembiayaan", label: "Info Pembiayaan" },
-    { href: "/event", label: "Event & Pelatihan" },
+    { href: "/pembiayaan", label: "VC & Pembiayaan" },
+    { href: "/event", label: "Agenda" },
   ];
 
   return (

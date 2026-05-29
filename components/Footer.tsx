@@ -9,14 +9,13 @@ export function Footer() {
             <span className="text-2xl font-black text-white tracking-tight">GARENG GO!</span>
           </Link>
           <p className="text-gray-400 max-w-sm mb-6">
-            Gandeng Renteng Go Level Up. Pusat informasi terpadu dan direktori UMKM Indonesia. Mendorong digitalisasi dan pertumbuhan bisnis mikro.
+            Gandeng Renteng Go Level Up. Situs edukasi dan informasi tentang venture capital dan pembiayaan di Indonesia.
           </p>
         </div>
         
         <div>
           <h4 className="text-white font-semibold mb-4">Eksplorasi</h4>
           <ul className="space-y-2">
-            <li><Link href="/umkm" className="hover:text-primary-400 transition-colors">Direktori UMKM</Link></li>
             <li><Link href="/pembiayaan" className="hover:text-primary-400 transition-colors">Info Pembiayaan</Link></li>
             <li><Link href="/event" className="hover:text-primary-400 transition-colors">Event & Pelatihan</Link></li>
           </ul>
