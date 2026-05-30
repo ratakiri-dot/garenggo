@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { TrendingUp, CalendarDays } from "lucide-react";
 import { BeritaCard } from "@/components/BeritaCard";
@@ -40,28 +41,39 @@ export default async function HomePage() {
               </div>
             </div>
 
-            <div className="rounded-[2rem] border border-white/10 bg-slate-900/90 p-8 shadow-[0_30px_80px_rgba(15,23,42,0.4)] ring-1 ring-white/5 backdrop-blur-xl">
-              <div className="flex items-center justify-between gap-4 mb-8">
-                <div>
-                  <p className="text-xs uppercase tracking-[0.28em] text-sky-300 font-semibold">Marketplace VC</p>
-                  <h2 className="mt-3 text-2xl font-black text-white">Pendanaan kelas global, untuk bisnis lokal.</h2>
-                </div>
-                <div className="rounded-3xl bg-slate-800/90 px-4 py-3 text-xs font-semibold uppercase tracking-[0.24em] text-sky-300">
-                  Pilih Strategi</div>
+            <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-slate-900/90 shadow-[0_30px_80px_rgba(15,23,42,0.4)] ring-1 ring-white/5 backdrop-blur-xl">
+              <div className="absolute inset-0">
+                <Image
+                  src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80"
+                  alt="Entrepreneur presentasi di depan investor"
+                  fill
+                  className="object-cover opacity-80"
+                />
+                <div className="absolute inset-0 bg-slate-950/75" />
               </div>
-              <div className="space-y-4">
-                <div className="rounded-3xl bg-slate-950/80 p-5 border border-white/5">
-                  <p className="text-sm text-slate-400">Dana awal untuk startup & usaha yang ingin scale dengan mentor VC.</p>
-                  <p className="mt-3 text-3xl font-bold text-white">Rp 200 juta - Rp 10 miliar</p>
-                </div>
-                <div className="grid gap-3 sm:grid-cols-2">
-                  <div className="rounded-3xl bg-slate-950/80 p-5 border border-white/5">
-                    <p className="text-xs uppercase tracking-[0.24em] text-slate-400">Investasi</p>
-                    <p className="mt-3 text-lg font-semibold text-white">VC, Angel, Debt</p>
+              <div className="relative p-8">
+                <div className="flex items-center justify-between gap-4 mb-8">
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.28em] text-sky-300 font-semibold">Marketplace VC</p>
+                    <h2 className="mt-3 text-2xl font-black text-white">Pendanaan kelas global, untuk bisnis lokal.</h2>
                   </div>
+                  <div className="rounded-3xl bg-slate-800/90 px-4 py-3 text-xs font-semibold uppercase tracking-[0.24em] text-sky-300">
+                    Pilih Strategi</div>
+                </div>
+                <div className="space-y-4">
                   <div className="rounded-3xl bg-slate-950/80 p-5 border border-white/5">
-                    <p className="text-xs uppercase tracking-[0.24em] text-slate-400">Fase</p>
-                    <p className="mt-3 text-lg font-semibold text-white">Ide, Awal, Berkembang</p>
+                    <p className="text-sm text-slate-400">Dana awal untuk startup & usaha yang ingin scale dengan mentor VC.</p>
+                    <p className="mt-3 text-3xl font-bold text-white">Rp 200 juta - Rp 10 miliar</p>
+                  </div>
+                  <div className="grid gap-3 sm:grid-cols-2">
+                    <div className="rounded-3xl bg-slate-950/80 p-5 border border-white/5">
+                      <p className="text-xs uppercase tracking-[0.24em] text-slate-400">Investasi</p>
+                      <p className="mt-3 text-lg font-semibold text-white">VC, Angel, Debt</p>
+                    </div>
+                    <div className="rounded-3xl bg-slate-950/80 p-5 border border-white/5">
+                      <p className="text-xs uppercase tracking-[0.24em] text-slate-400">Fase</p>
+                      <p className="mt-3 text-lg font-semibold text-white">Ide, Awal, Berkembang</p>
+                    </div>
                   </div>
                 </div>
               </div>
